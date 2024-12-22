@@ -1,0 +1,14 @@
+[Unit]
+Description=Directory Monitor Service
+After=network.target
+
+[Service]
+ExecStart=/home/linux/bsm/myenv/bin/python /home/linux/bsm/ders_proje.py
+Restart=always
+User=linux
+WorkingDirectory=/home/linux/bsm
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
